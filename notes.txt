@@ -1,0 +1,10 @@
+Design a URL shortener service that takes in a valid URL
+and returns a shortened URL, redirecting the user to the previously
+provided URL.
+
+Also, keep track of total visits/clicks on the URL.
+
+Routes:
+POST /URL - generates a new short url and  returns it in a format
+GET /:id - redirects the user to the original url
+GET /URL/analytics/:id - returns the clicks for the provided short id
