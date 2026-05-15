@@ -8,3 +8,6 @@ Routes:
 POST /URL - generates a new short url and  returns it in a format
 GET /:id - redirects the user to the original url
 GET /URL/analytics/:id - returns the clicks for the provided short id
+
+Server side rendering : when complete html page gets rendered from the server !
+we use templating engines to handle server-side-rendering

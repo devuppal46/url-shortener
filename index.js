@@ -17,7 +17,9 @@ connectToMongodb(mongoUri)
 app.use(express.json());
 app.use("/url" , urlRoute);
 app.use("/:shortId" , urlRoute);
-
+app.get("/test" ,(req,res)=>{
+    return res.end("<h1>jai shree ram</h1>")
+})
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on http://localhost:${PORT}`);
