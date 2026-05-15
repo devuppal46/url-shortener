@@ -1,3 +1,4 @@
+//require modules
 const express = require("express");
 const { connectToMongodb } = require("./connect");
 const urlRoute = require("./routes/url");
@@ -15,20 +16,8 @@ connectToMongodb(mongoUri)
 
 app.use(express.json());
 app.use("/url" , urlRoute);
+app.use("/:shortId" , urlRoute);
 
-app.get("/:shortId" , async (req,res)=>{
-    const shortId =req.params.shortId;
-    const entry =await URL.findOneAndUpdate({
-        shortId
-    },{
-        $push: {
-            visitHistory: {
-                timestamps: Date.now(),
-            }
-        }
-    })
-    res.redirect(entry.redirectURL);
-});
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on http://localhost:${PORT}`);
