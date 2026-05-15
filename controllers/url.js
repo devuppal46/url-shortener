@@ -27,8 +27,17 @@ async function handleRedirectShortId(req, res) {
     })
     res.redirect(entry.redirectURL);
 }
+async function handleGetAnalytics(req, res) {
+    const shortId =req.params.shortId;
+    const result =await URL.findOne({ shortId });
+    return res.json({
+        totalClicks: result.visitHistory.length,
+        visitHistory: result.visitHistory,
+    });
+}
 
 module.exports = {
     handleGenerateShortId,
-    handleRedirectShortId
+    handleRedirectShortId,
+    handleGetAnalytics,
 }
