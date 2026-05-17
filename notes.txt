@@ -11,3 +11,5 @@ GET /URL/analytics/:id - returns the clicks for the provided short id
 
 Server side rendering : when complete html page gets rendered from the server !
 we use templating engines to handle server-side-rendering like ejs
+1. we have seperate files for views
+2. our server is clean 
