@@ -14,6 +14,8 @@ connectToMongodb(mongoUri)
 .then(()=>{ console.log("Connected to MongoDB");})
 .catch((err)=>{ console.log("Error connecting to MongoDB", err);} );
 
+app.set("view engine", "ejs");
+
 app.use(express.json());
 app.use("/url" , urlRoute);
 app.use("/:shortId" , urlRoute);
