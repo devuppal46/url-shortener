@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^18.0.5",
     "ejs": "^5.0.2",
     "express": "^5.1.0",
     "mongoose": "^8.18.1",

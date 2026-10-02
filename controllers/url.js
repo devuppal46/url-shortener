@@ -25,6 +25,7 @@ async function handleRedirectShortId(req, res) {
             }
         }
     })
+    if (!entry) return res.status(404).json({ error: "ShortId not found" });
     res.redirect(entry.redirectURL);
 }
 async function handleGetAnalytics(req, res) {
