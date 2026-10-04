@@ -29,3 +29,13 @@ how does the server verifies that the credential is genuine?
 1. cookie-based sessions
 server set cookie, browser stores that cookie
 HttpOnly, Secure , Samesite
+
+bcrypt.compare()
+      ↓
+generate sessionId
+      ↓
+store session in MongoDB
+      ↓
+send sessionId as cookie
+      ↓
+browser stores cookie
