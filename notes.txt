@@ -13,3 +13,19 @@ Server side rendering : when complete html page gets rendered from the server !
 we use templating engines to handle server-side-rendering like ejs
 1. we have seperate files for views
 2. our server is clean 
+
+--> currntly anyone can access our resources , create url and it will work
+--> we have to add users such that one user can't view the analytics of another!
+--> Authentication - who are you?
+--> Authorization - are u allowed to perform this operation?
+
+-->USER id,name,email,password
+-->URL shortId, redirectURL, visitedHistory, createdBy
+
+one to manny mapping bw USER --> URL
+
+how does the server verifies that the credential is genuine?
+
+1. cookie-based sessions
+server set cookie, browser stores that cookie
+HttpOnly, Secure , Samesite

@@ -7,6 +7,7 @@ const { connectToMongodb } = require("./connect");
 const urlRoute = require("./routes/url");
 const shortidRoute = require("./routes/shortid.js");
 const staticRoute = require("./routes/staticRouter");
+const userRoute = require("./routes/user.js");
 const URL = require("./models/url");
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.urlencoded({extended: true}));
 app.use("/url" , urlRoute);
 app.use("/:shortId" , shortidRoute);
 app.use("/:shortId/analytics" , shortidRoute);
+app.use("/user" , userRoute);
 app.use("/", staticRoute);
 
 app.listen(PORT, ()=>{
