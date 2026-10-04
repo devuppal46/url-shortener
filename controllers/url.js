@@ -32,8 +32,15 @@ async function handleRedirectShortId(req, res) {
 }
 
 async function handleGetAnalytics(req, res) {
-    const shortId =req.params.shortId;
-    const result =await URL.findOne({ shortId });
+    const shortId = req.params.shortId;
+    const result = await URL.findOne({ shortId });
+
+    if (!result) {
+        return res.status(404).json({
+            error: "ShortId not found"
+        });
+    }
+
     return res.json({
         totalClicks: result.visitHistory.length,
         visitHistory: result.visitHistory,
