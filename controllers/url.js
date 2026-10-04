@@ -24,10 +24,13 @@ async function handleRedirectShortId(req, res) {
                 timestamp: Date.now(),
             }
         }
-    })
+    },
+    { new: true }
+    );
     if (!entry) return res.status(404).json({ error: "ShortId not found" });
     res.redirect(entry.redirectURL);
 }
+
 async function handleGetAnalytics(req, res) {
     const shortId =req.params.shortId;
     const result =await URL.findOne({ shortId });
